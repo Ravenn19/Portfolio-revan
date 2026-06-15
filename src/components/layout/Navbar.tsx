@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { navLinks } from '../../data/portfolioData';
 
-export default function Navbar() {
+interface NavbarProps {
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
+}
+
+export default function Navbar({ theme, toggleTheme }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -59,28 +64,52 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <ul className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-lg transition-all duration-300 no-underline ${
-                  activeSection === link.href.replace('#', '')
-                    ? 'text-blue-400 bg-blue-500/10'
-                    : 'text-slate-400 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden lg:flex items-center gap-4">
+          <ul className="flex items-center gap-1">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-lg transition-all duration-300 no-underline ${
+                    activeSection === link.href.replace('#', '')
+                      ? 'text-blue-400 bg-blue-500/10'
+                      : 'text-slate-400 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <button
+            onClick={toggleTheme}
+            className="p-2.5 rounded-xl border border-blue-500/15 bg-blue-500/5 hover:bg-blue-500/10 text-blue-400 hover:text-blue-300 transition-all duration-300 ml-2 shadow-[0_0_15px_rgba(59,130,246,0.05)]"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
+        </div>
 
         {/* Mobile toggle */}
-        <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden text-slate-300 hover:text-white transition-colors p-2" aria-label="Toggle menu">
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            onClick={toggleTheme}
+            className="p-2.5 rounded-xl border border-blue-500/15 bg-blue-500/5 text-blue-400 transition-all duration-300 shadow-[0_0_10px_rgba(59,130,246,0.05)]"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
+
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-slate-300 hover:text-white transition-colors p-2"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}

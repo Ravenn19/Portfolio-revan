@@ -203,3 +203,194 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* --- LIGHT MODE OVERRIDES --- */
+body:not(.dark) {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body:not(.dark) ::selection {
+  background: rgba(59, 130, 246, 0.15);
+  color: #0f172a;
+}
+
+/* Scrollbar */
+body:not(.dark) ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+body:not(.dark) ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #60a5fa, #22d3ee);
+}
+
+/* Glass Card */
+body:not(.dark) .glass-card {
+  background: rgba(255, 255, 255, 0.65) !important;
+  border-color: rgba(59, 130, 246, 0.15) !important;
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.05) !important;
+}
+
+body:not(.dark) .glass-card-hover:hover {
+  border-color: rgba(59, 130, 246, 0.35) !important;
+  box-shadow: 0 15px 50px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Text Colors */
+body:not(.dark) .text-white,
+body:not(.dark) h1,
+body:not(.dark) h2,
+body:not(.dark) h3,
+body:not(.dark) h4 {
+  color: #0f172a !important;
+}
+
+body:not(.dark) .text-slate-300,
+body:not(.dark) .text-slate-400 {
+  color: #334155 !important;
+}
+
+body:not(.dark) .text-slate-500 {
+  color: #475569 !important;
+}
+
+/* Background overrides */
+body:not(.dark) .bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, #f8fafc, #f1f5f9, #f8fafc) !important;
+}
+
+body:not(.dark) .bg-navy-950,
+body:not(.dark) .bg-navy-900,
+body:not(.dark) .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+body:not(.dark) .bg-navy-900\/50,
+body:not(.dark) .bg-navy-900\/80 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Inputs specifically */
+body:not(.dark) input,
+body:not(.dark) textarea {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #0f172a !important;
+  border-color: rgba(59, 130, 246, 0.25) !important;
+}
+
+body:not(.dark) input::placeholder,
+body:not(.dark) textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+body:not(.dark) input:focus,
+body:not(.dark) textarea:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Badges */
+body:not(.dark) .tech-badge {
+  background: rgba(59, 130, 246, 0.08) !important;
+  border-color: rgba(59, 130, 246, 0.2) !important;
+  color: #2563eb !important;
+}
+
+body:not(.dark) .tech-badge:hover {
+  background: rgba(59, 130, 246, 0.15) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+}
+
+/* Ambient Blobs & Shapes */
+body:not(.dark) .ambient-blob {
+  opacity: 0.05 !important;
+}
+
+body:not(.dark) .animate-float,
+body:not(.dark) .animate-float-slow,
+body:not(.dark) .animate-float-delayed {
+  opacity: 0.08 !important;
+}
+
+/* Navbar overrides */
+body:not(.dark) #header {
+  background-color: rgba(248, 250, 252, 0.8) !important;
+  border-color: rgba(59, 130, 246, 0.1) !important;
+  box-shadow: 0 4px 30px rgba(59, 130, 246, 0.05) !important;
+}
+
+body:not(.dark) #header.bg-transparent:not(.scrolled) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+body:not(.dark) #header nav a {
+  color: #334155;
+}
+
+body:not(.dark) #header nav a:hover {
+  color: #2563eb;
+}
+
+body:not(.dark) #header nav ul a {
+  color: #475569;
+}
+
+body:not(.dark) #header nav ul a:hover {
+  color: #2563eb;
+  background-color: rgba(59, 130, 246, 0.08);
+}
+
+body:not(.dark) #header nav ul a.text-blue-400 {
+  color: #2563eb !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Skills redesigned items */
+body:not(.dark) #skills .group {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(255, 255, 255, 0.8)) !important;
+  border-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+body:not(.dark) #skills .group h3 {
+  color: #0f172a !important;
+}
+
+/* Experience image bg */
+body:not(.dark) #experience .bg-slate-900\/80 {
+  background-color: #f1f5f9 !important;
+}
+
+/* Footer Section */
+body:not(.dark) footer {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+body:not(.dark) footer p,
+body:not(.dark) footer a {
+  color: #475569 !important;
+}
+
+body:not(.dark) footer a:hover {
+  color: #2563eb !important;
+}
+
+body:not(.dark) footer h4 {
+  color: #0f172a !important;
+}
+
+/* Mobile menu container */
+body:not(.dark) .lg\:hidden.bg-navy-950\/98 {
+  background-color: rgba(248, 250, 252, 0.98) !important;
+  border-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+body:not(.dark) .lg\:hidden.bg-navy-950\/98 a {
+  color: #334155 !important;
+}
+
+body:not(.dark) .lg\:hidden.bg-navy-950\/98 a.text-blue-400 {
+  color: #2563eb !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
