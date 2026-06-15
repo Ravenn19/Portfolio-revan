@@ -216,11 +216,15 @@ body:not(.dark) ::selection {
 }
 
 /* Scrollbar */
-body:not(.dark) ::-webkit-scrollbar-track {
-  background: #f8fafc;
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
 }
-body:not(.dark) ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #60a5fa, #22d3ee);
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #06b6d4) !important;
+  border-radius: 4px;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2563eb, #0891b2) !important;
 }
 
 /* Glass Card */
@@ -292,7 +296,7 @@ body:not(.dark) .bg-navy-900\/80 {
 }
 
 body:not(.dark) #experience .bg-gradient-to-r {
-  background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.95)) !important;
+  opacity: 0 !important;
 }
 
 /* Inputs specifically */
