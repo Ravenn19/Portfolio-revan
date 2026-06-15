@@ -235,13 +235,27 @@ body:not(.dark) .glass-card-hover:hover {
   box-shadow: 0 15px 50px rgba(59, 130, 246, 0.1) !important;
 }
 
-/* Text Colors */
+/* Text Colors & Gradients */
 body:not(.dark) .text-white,
 body:not(.dark) h1,
 body:not(.dark) h2,
 body:not(.dark) h3,
 body:not(.dark) h4 {
   color: #0f172a !important;
+}
+
+body:not(.dark) .gradient-text {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 40%, #0284c7 75%, #0369a1 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body:not(.dark) .gradient-text-static {
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 50%, #0369a1 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
 }
 
 body:not(.dark) .text-slate-300,
@@ -251,6 +265,14 @@ body:not(.dark) .text-slate-400 {
 
 body:not(.dark) .text-slate-500 {
   color: #475569 !important;
+}
+
+body:not(.dark) .text-blue-400 {
+  color: #1d4ed8 !important; /* Rich Dark Royal Blue */
+}
+
+body:not(.dark) .text-cyan-400 {
+  color: #0891b2 !important; /* Darker Cyan */
 }
 
 /* Background overrides */
@@ -267,6 +289,10 @@ body:not(.dark) .bg-slate-950 {
 body:not(.dark) .bg-navy-900\/50,
 body:not(.dark) .bg-navy-900\/80 {
   background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body:not(.dark) #experience .bg-gradient-to-r {
+  background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.95)) !important;
 }
 
 /* Inputs specifically */
