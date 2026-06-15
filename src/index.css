@@ -296,10 +296,6 @@ html:not(.dark) .bg-navy-900\/80 {
   background-color: rgba(255, 255, 255, 0.8) !important;
 }
 
-html:not(.dark) #experience .bg-gradient-to-r {
-  opacity: 0 !important;
-}
-
 /* Inputs specifically */
 html:not(.dark) input,
 html:not(.dark) textarea {

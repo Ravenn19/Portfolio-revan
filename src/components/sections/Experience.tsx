@@ -34,7 +34,6 @@ export default function Experience() {
                       className="w-full h-[200px] md:h-full object-contain md:object-cover p-4 md:p-0 transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-navy-900/60 hidden md:block" />
                   </div>
 
                   {/* Content */}
