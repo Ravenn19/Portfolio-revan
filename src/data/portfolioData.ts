@@ -200,13 +200,14 @@ export const contactInfo: ContactInfo[] = [
     icon: 'Phone',
     label: 'Phone',
     value: '+62 899-7384-624',
-    href: 'tel:+628997384624',
+    href: 'https://wa.me/+628997384624',
+    isExternal: true,
   },
   {
     icon: 'Linkedin',
     label: 'LinkedIn',
-    value: 'linkedin.com/in/nanda-revan-saputro',
-    href: 'https://www.linkedin.com/in/nanda-revan-saputro',
+    value: 'linkedin.com/in/nanda-revan-saputro-3b89ab284',
+    href: 'https://www.linkedin.com/in/nanda-revan-saputro-3b89ab284/',
     isExternal: true,
   },
 ];
@@ -215,7 +216,7 @@ export const socialLinks: SocialLink[] = [
   {
     name: 'LinkedIn',
     icon: 'Linkedin',
-    href: 'https://www.linkedin.com/in/nanda-revan-saputro',
+    href: 'https://www.linkedin.com/in/nanda-revan-saputro-3b89ab284/',
   },
   {
     name: 'GitHub',
@@ -240,7 +241,7 @@ export const socialLinks: SocialLink[] = [
   {
     name: 'Phone',
     icon: 'Phone',
-    href: 'tel:+628997384624',
+    href: 'https://wa.me/+628997384624',
   },
 ];
 
