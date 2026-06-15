@@ -56,7 +56,7 @@ export const experienceData: Experience[] = [
   {
     role: 'Full Stack Developer',
     company: 'Institut Teknologi PLN',
-    duration: 'Dec 2025 – May 2026',
+    duration: 'Dec 2025 – Present',
     description:
       'Worked as a Full Stack Developer at BUIB IT PLN, handling both frontend and backend development to support digital business initiatives. Built the STP ITPLN website using Laravel, improving digital presence, user engagement, and overall system performance.',
     image: '/images/itpln1.jpg',
