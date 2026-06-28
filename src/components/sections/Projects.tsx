@@ -15,7 +15,7 @@ export default function Projects() {
           subtitle="Building intelligent systems and modern web platforms that merge innovation and practicality"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
           {projectsData.map((project, index) => (
             <motion.div
               key={project.id}
@@ -23,8 +23,9 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="w-full md:w-[calc(50%-12px)] xl:w-[calc(33.333%-22px)] flex"
             >
-              <div className="glass-card glass-card-hover overflow-hidden group h-full flex flex-col relative">
+              <div className="glass-card glass-card-hover overflow-hidden group flex-1 flex flex-col relative">
                 <div className="absolute inset-0 rounded-[20px] bg-gradient-to-r from-blue-500/0 via-cyan-400/0 to-blue-500/0 group-hover:from-blue-500/20 group-hover:via-cyan-400/10 group-hover:to-blue-500/20 transition-all duration-500 pointer-events-none" />
                 <div className="h-[200px] sm:h-[220px] overflow-hidden relative">
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />

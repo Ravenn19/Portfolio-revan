@@ -5,8 +5,9 @@ import { achievementsData } from '../../data/portfolioData';
 
 const getIcon = (title: string) => {
   const t = title.toLowerCase();
-  if (t.includes('ambassador')) return <Award size={22} className="text-blue-400" />;
-  if (t.includes('teamwork')) return <Users size={22} className="text-cyan-400" />;
+  if (t.includes('ambassador') || t.includes('teamwork')) {
+    return <img src="/images/google.png" alt="Google" className="w-6 h-6 object-contain" />;
+  }
   return <Trophy size={22} className="text-amber-400" />;
 };
 
