@@ -89,9 +89,9 @@ export default function Skills({ theme }: SkillsProps) {
                         key={item}
                         className="px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 cursor-default shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
                         style={{
-                          background: isDark ? colors.bg : '#ffffff',
-                          border: `1px solid ${isDark ? colors.border : 'rgba(15, 23, 42, 0.08)'}`,
-                          color: isDark ? colors.to : colors.from,
+                          background: isDark ? colors.bg : '#1e293b',
+                          border: `1px solid ${isDark ? colors.border : '#1e293b'}`,
+                          color: isDark ? colors.to : '#ffffff',
                         }}
                       >
                         {item}
