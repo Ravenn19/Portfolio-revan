@@ -52,9 +52,9 @@ export const aboutData = {
   title: 'AI & Full Stack Developer',
   paragraphs: [
     "I'm a 20 years old Informatics Engineering student at Institut Teknologi PLN with a GPA of 3.96. Passionate about Artificial Intelligence and software development, I combine creativity and logic to craft impactful digital solutions that merge innovation and practicality.",
-    "Driven by curiosity and vision, I build intelligent systems, web platforms, and AI-powered solutions that bridge technology and creativity. My goal is to create systems that don't just work — they inspire.",
+    "Driven by curiosity and vision, I build intelligent systems, web platforms, and AI-powered solutions that bridge technology and creativity. My goal is to create systems that not only work but also inspire.",
   ],
-  quote: '\u201CInnovation isn\u2019t luck \u2014 it\u2019s the result of focus, persistence, and curiosity.\u201D',
+  quote: '\u201CInnovation isn\u2019t luck. It\u2019s the result of focus, persistence, and curiosity.\u201D',
   photo: '/images/revan.jpg',
 };
 
