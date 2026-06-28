@@ -14,24 +14,44 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 50);
+    // 1. Simple onscroll listener for sticky header background
+    let lastScrollY = window.scrollY;
+    let ticking = false;
 
-      const sections = document.querySelectorAll('section[id]');
-      const scrollPos = window.scrollY + 120;
-      sections.forEach((section) => {
-        const el = section as HTMLElement;
-        const top = el.offsetTop;
-        const height = el.offsetHeight;
-        const id = el.getAttribute('id') || '';
-        if (scrollPos >= top && scrollPos < top + height) {
-          setActiveSection(id);
-        }
-      });
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+
+    // 2. High-performance IntersectionObserver for active navigation section
+    const sections = document.querySelectorAll('section[id]');
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -40% 0px',
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {

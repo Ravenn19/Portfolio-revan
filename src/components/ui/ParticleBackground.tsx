@@ -22,8 +22,8 @@ export default function ParticleBackground() {
     };
 
     const initParticles = () => {
-      // Drastically reduced count for performance
-      const count = Math.min(15, Math.floor(window.innerWidth / 80));
+      // Disable particles completely on mobile screens (< 768px) to maximize scroll performance
+      const count = window.innerWidth < 768 ? 0 : Math.min(15, Math.floor(window.innerWidth / 80));
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -39,7 +39,7 @@ export default function ParticleBackground() {
 
     let frameCount = 0;
     const animate = () => {
-      if (!isVisible) {
+      if (!isVisible || particles.length === 0) {
         isAnimating = false;
         return;
       }

@@ -182,6 +182,12 @@
   contain: layout style paint;
 }
 
+@media (max-w: 767px) {
+  .ambient-blob {
+    display: none !important;
+  }
+}
+
 .ambient-blob-1 {
   width: 400px;
   height: 400px;
