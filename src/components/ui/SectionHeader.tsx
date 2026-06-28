@@ -31,7 +31,7 @@ export default function SectionHeader({ title, subtitle }: SectionHeaderProps) {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-        className="mt-6 mx-auto h-[2px] w-24 bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+        className="mt-6 mx-auto h-[2px] w-24 sm:w-36 md:w-48 lg:w-56 bg-gradient-to-r from-transparent via-blue-500 to-transparent"
       />
     </div>
   );
