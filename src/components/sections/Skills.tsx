@@ -22,12 +22,12 @@ const categoryColorsDark: Record<string, { from: string; to: string; bg: string;
 };
 
 const categoryColorsLight: Record<string, { from: string; to: string; bg: string; border: string }> = {
-  Frontend: { from: '#1e40af', to: '#1d4ed8', bg: 'rgba(59, 130, 246, 0.08)', border: 'rgba(59, 130, 246, 0.18)' },
-  Backend: { from: '#164e63', to: '#164e63', bg: 'rgba(6, 182, 212, 0.08)', border: 'rgba(6, 182, 212, 0.18)' },
-  'Artificial Intelligence': { from: '#6d28d9', to: '#6d28d9', bg: 'rgba(139, 92, 246, 0.08)', border: 'rgba(139, 92, 246, 0.18)' },
-  'Soft Skills': { from: '#7c2d12', to: '#7c2d12', bg: 'rgba(245, 158, 11, 0.08)', border: 'rgba(245, 158, 11, 0.18)' },
-  Languages: { from: '#047857', to: '#047857', bg: 'rgba(16, 185, 129, 0.08)', border: 'rgba(16, 185, 129, 0.18)' },
-  Hobbies: { from: '#b91c1c', to: '#b91c1c', bg: 'rgba(239, 68, 68, 0.08)', border: 'rgba(239, 68, 68, 0.18)' },
+  Frontend: { from: '#3b82f6', to: '#60a5fa', bg: 'rgba(59, 130, 246, 0.08)', border: 'rgba(59, 130, 246, 0.18)' },
+  Backend: { from: '#06b6d4', to: '#22d3ee', bg: 'rgba(6, 182, 212, 0.08)', border: 'rgba(6, 182, 212, 0.18)' },
+  'Artificial Intelligence': { from: '#8b5cf6', to: '#a78bfa', bg: 'rgba(139, 92, 246, 0.08)', border: 'rgba(139, 92, 246, 0.18)' },
+  'Soft Skills': { from: '#f59e0b', to: '#fbbf24', bg: 'rgba(245, 158, 11, 0.08)', border: 'rgba(245, 158, 11, 0.18)' },
+  Languages: { from: '#10b981', to: '#34d399', bg: 'rgba(16, 185, 129, 0.08)', border: 'rgba(16, 185, 129, 0.18)' },
+  Hobbies: { from: '#ef4444', to: '#f87171', bg: 'rgba(239, 68, 68, 0.08)', border: 'rgba(239, 68, 68, 0.18)' },
 };
 
 interface SkillsProps {

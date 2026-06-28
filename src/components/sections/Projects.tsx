@@ -26,7 +26,7 @@ export default function Projects() {
               className="w-full md:w-[calc(50%-12px)] xl:w-[calc(33.333%-22px)] flex"
             >
               <div className="glass-card glass-card-hover overflow-hidden group flex-1 flex flex-col relative">
-                <div className="absolute inset-0 rounded-[20px] bg-gradient-to-r from-blue-500/0 via-cyan-400/0 to-blue-500/0 group-hover:from-blue-500/20 group-hover:via-cyan-400/10 group-hover:to-blue-500/20 transition-all duration-500 pointer-events-none" />
+                <div className="absolute inset-0 rounded-[20px] bg-gradient-to-r from-blue-500/20 via-cyan-400/10 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="h-[200px] sm:h-[220px] overflow-hidden relative">
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-900/90 via-navy-900/20 to-transparent" />

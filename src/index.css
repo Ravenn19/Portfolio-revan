@@ -55,6 +55,9 @@
 
   .glass-card-hover {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, box-shadow, border-color;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   .glass-card-hover:hover {
     border-color: rgba(59, 130, 246, 0.3);
@@ -241,7 +244,6 @@ html:not(.dark) .glass-card-hover:hover {
 }
 
 /* Text Colors & Gradients */
-html:not(.dark) .text-white,
 html:not(.dark) h1,
 html:not(.dark) h2,
 html:not(.dark) h3,
