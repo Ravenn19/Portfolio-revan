@@ -23,9 +23,9 @@ const categoryColorsDark: Record<string, { from: string; to: string; bg: string;
 
 const categoryColorsLight: Record<string, { from: string; to: string; bg: string; border: string }> = {
   Frontend: { from: '#1e40af', to: '#1d4ed8', bg: 'rgba(30,64,175,0.04)', border: 'rgba(30,64,175,0.15)' },
-  Backend: { from: '#0e7490', to: '#0e7490', bg: 'rgba(14,116,144,0.04)', border: 'rgba(14,116,144,0.15)' },
+  Backend: { from: '#164e63', to: '#164e63', bg: 'rgba(22,78,99,0.04)', border: 'rgba(22,78,99,0.15)' },
   'Artificial Intelligence': { from: '#6d28d9', to: '#6d28d9', bg: 'rgba(109,40,217,0.04)', border: 'rgba(109,40,217,0.15)' },
-  'Soft Skills': { from: '#b45309', to: '#b45309', bg: 'rgba(180,83,9,0.04)', border: 'rgba(180,83,9,0.15)' },
+  'Soft Skills': { from: '#7c2d12', to: '#7c2d12', bg: 'rgba(124,45,18,0.04)', border: 'rgba(124,45,18,0.15)' },
   Languages: { from: '#047857', to: '#047857', bg: 'rgba(4,120,87,0.04)', border: 'rgba(4,120,87,0.15)' },
   Hobbies: { from: '#b91c1c', to: '#b91c1c', bg: 'rgba(185,28,28,0.04)', border: 'rgba(185,28,28,0.15)' },
 };
