@@ -23,7 +23,7 @@ export default function ParticleBackground() {
 
     const initParticles = () => {
       // Drastically reduced count for performance
-      const count = Math.min(25, Math.floor(window.innerWidth / 60));
+      const count = Math.min(15, Math.floor(window.innerWidth / 80));
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -34,8 +34,17 @@ export default function ParticleBackground() {
       }));
     };
 
+    let isVisible = true;
+    let isAnimating = true;
+
     let frameCount = 0;
     const animate = () => {
+      if (!isVisible) {
+        isAnimating = false;
+        return;
+      }
+      isAnimating = true;
+
       frameCount++;
       // Skip every other frame for performance
       if (frameCount % 2 !== 0) {
@@ -60,8 +69,8 @@ export default function ParticleBackground() {
         ctx.fillStyle = `rgba(96, 165, 250, ${p.opacity})`;
         ctx.fill();
 
-        // Fewer connection checks — only check next 5 particles
-        const limit = Math.min(i + 5, particles.length);
+        // Fewer connection checks — only check next 3 particles
+        const limit = Math.min(i + 3, particles.length);
         for (let j = i + 1; j < limit; j++) {
           const dx = p.x - particles[j].x;
           const dy = p.y - particles[j].y;
@@ -83,6 +92,16 @@ export default function ParticleBackground() {
 
     resize();
     initParticles();
+    
+    // Intersection observer to only animate when visible
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting;
+      if (isVisible && !isAnimating) {
+        animate();
+      }
+    }, { threshold: 0.05 });
+    observer.observe(canvas);
+
     animate();
 
     const onResize = () => { resize(); initParticles(); };
@@ -91,6 +110,7 @@ export default function ParticleBackground() {
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', onResize);
+      observer.disconnect();
     };
   }, []);
 

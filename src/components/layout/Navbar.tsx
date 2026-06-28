@@ -57,7 +57,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-8 py-4">
         {/* Logo */}
         <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center gap-3 no-underline group">
-          <img src="/images/logorevan_1.png" alt="Logo" className="w-[50px] sm:w-[60px] transition-transform duration-300 group-hover:scale-110" />
+          <img src={theme === 'light' ? '/images/logorevan_3.png' : '/images/logorevan_1.png'} alt="Logo" className="w-[50px] sm:w-[60px] transition-transform duration-300 group-hover:scale-110" />
           <span className="text-lg sm:text-xl font-bold tracking-wide gradient-text-static hidden sm:inline">
             Nanda Revan Saputro
           </span>

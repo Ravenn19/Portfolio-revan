@@ -38,7 +38,7 @@ export default function App() {
         <Skills />
         <Contact />
       </main>
-      <Footer />
+      <Footer theme={theme} />
     </div>
   );
 }

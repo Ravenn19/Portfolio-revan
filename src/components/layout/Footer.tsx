@@ -11,7 +11,11 @@ const iconMap: Record<string, React.ReactNode> = {
   Phone: <Phone size={16} />,
 };
 
-export default function Footer() {
+interface FooterProps {
+  theme: 'light' | 'dark';
+}
+
+export default function Footer({ theme }: FooterProps) {
   const handleLinkClick = (e: React.MouseEvent, href: string) => {
     if (href.startsWith('#')) {
       e.preventDefault();
@@ -36,7 +40,7 @@ export default function Footer() {
           {/* Brand */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <img src="/images/logorevan_1.png" alt="Logo" className="w-[60px]" />
+              <img src={theme === 'light' ? '/images/logorevan_3.png' : '/images/logorevan_1.png'} alt="Logo" className="w-[60px]" />
               <span className="text-lg font-bold gradient-text-static">Nanda Revan Saputro</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-5 max-w-[300px]">
