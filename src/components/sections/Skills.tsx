@@ -22,12 +22,12 @@ const categoryColorsDark: Record<string, { from: string; to: string; bg: string;
 };
 
 const categoryColorsLight: Record<string, { from: string; to: string; bg: string; border: string }> = {
-  Frontend: { from: '#1e40af', to: '#1d4ed8', bg: 'rgba(30,64,175,0.04)', border: 'rgba(30,64,175,0.15)' },
-  Backend: { from: '#164e63', to: '#164e63', bg: 'rgba(22,78,99,0.04)', border: 'rgba(22,78,99,0.15)' },
-  'Artificial Intelligence': { from: '#6d28d9', to: '#6d28d9', bg: 'rgba(109,40,217,0.04)', border: 'rgba(109,40,217,0.15)' },
-  'Soft Skills': { from: '#7c2d12', to: '#7c2d12', bg: 'rgba(124,45,18,0.04)', border: 'rgba(124,45,18,0.15)' },
-  Languages: { from: '#047857', to: '#047857', bg: 'rgba(4,120,87,0.04)', border: 'rgba(4,120,87,0.15)' },
-  Hobbies: { from: '#b91c1c', to: '#b91c1c', bg: 'rgba(185,28,28,0.04)', border: 'rgba(185,28,28,0.15)' },
+  Frontend: { from: '#1e40af', to: '#1d4ed8', bg: 'rgba(59, 130, 246, 0.08)', border: 'rgba(59, 130, 246, 0.18)' },
+  Backend: { from: '#164e63', to: '#164e63', bg: 'rgba(6, 182, 212, 0.08)', border: 'rgba(6, 182, 212, 0.18)' },
+  'Artificial Intelligence': { from: '#6d28d9', to: '#6d28d9', bg: 'rgba(139, 92, 246, 0.08)', border: 'rgba(139, 92, 246, 0.18)' },
+  'Soft Skills': { from: '#7c2d12', to: '#7c2d12', bg: 'rgba(245, 158, 11, 0.08)', border: 'rgba(245, 158, 11, 0.18)' },
+  Languages: { from: '#047857', to: '#047857', bg: 'rgba(16, 185, 129, 0.08)', border: 'rgba(16, 185, 129, 0.18)' },
+  Hobbies: { from: '#b91c1c', to: '#b91c1c', bg: 'rgba(239, 68, 68, 0.08)', border: 'rgba(239, 68, 68, 0.18)' },
 };
 
 interface SkillsProps {
@@ -60,12 +60,12 @@ export default function Skills({ theme }: SkillsProps) {
                   className="rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group"
                   style={{
                     background: isDark
-                      ? `linear-gradient(135deg, ${colors.bg}, rgba(13,27,42,0.5))`
-                      : `linear-gradient(135deg, ${colors.bg}, rgba(255,255,255,0.92))`,
+                      ? `linear-gradient(135deg, ${colors.bg}, rgba(0,0,0,0.2))`
+                      : `linear-gradient(135deg, ${colors.bg}, #ffffff)`,
                     border: `1px solid ${colors.border}`,
                     boxShadow: isDark
                       ? 'none'
-                      : '0 8px 30px rgba(15,23,42,0.04)',
+                      : '0 8px 30px rgba(0,0,0,0.04)',
                   }}
                 >
                   {/* Header row */}
@@ -78,7 +78,7 @@ export default function Skills({ theme }: SkillsProps) {
                     </div>
                     <div>
                       <h3 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{skill.category}</h3>
-                      <p className={`${isDark ? 'text-slate-500' : 'text-slate-400'} text-xs`}>{skill.items.length} skills</p>
+                      <p className={`${isDark ? 'text-slate-500' : 'text-slate-600'} text-xs`}>{skill.items.length} skills</p>
                     </div>
                   </div>
 
@@ -87,11 +87,11 @@ export default function Skills({ theme }: SkillsProps) {
                     {skill.items.map((item) => (
                       <span
                         key={item}
-                        className="px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 cursor-default shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+                        className="px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 cursor-default"
                         style={{
-                          background: isDark ? colors.bg : colors.from,
-                          border: `1px solid ${isDark ? colors.border : colors.from}`,
-                          color: isDark ? colors.to : '#ffffff',
+                          background: colors.bg,
+                          border: `1px solid ${colors.border}`,
+                          color: isDark ? colors.to : '#000000',
                         }}
                       >
                         {item}

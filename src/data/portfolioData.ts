@@ -60,7 +60,7 @@ export const aboutData = {
 
 export const experienceData: Experience[] = [
   {
-    role: 'Full Stack Developer',
+    role: 'Full Stack Developer, Student Worker',
     company: 'Institut Teknologi PLN',
     duration: 'Dec 2025 – Present',
     description:

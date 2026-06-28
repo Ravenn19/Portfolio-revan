@@ -37,7 +37,7 @@ export default function App() {
         <Experience />
         <Projects />
         <Achievements />
-        <Skills />
+        <Skills theme={theme} />
         <Contact />
       </main>
       <Footer theme={theme} />
