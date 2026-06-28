@@ -373,15 +373,7 @@ html:not(.dark) #header nav ul a.text-blue-400 {
   background-color: rgba(59, 130, 246, 0.1) !important;
 }
 
-/* Skills redesigned items */
-html:not(.dark) #skills .group {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(255, 255, 255, 0.8)) !important;
-  border-color: rgba(59, 130, 246, 0.15) !important;
-}
 
-html:not(.dark) #skills .group h3 {
-  color: #0f172a !important;
-}
 
 /* Experience image bg */
 html:not(.dark) #experience .bg-slate-900\/80 {

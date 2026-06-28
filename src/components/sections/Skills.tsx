@@ -12,7 +12,7 @@ const iconComponents: Record<string, React.ReactNode> = {
   '🔥': <Flame size={28} />,
 };
 
-const categoryColors: Record<string, { from: string; to: string; bg: string; border: string }> = {
+const categoryColorsDark: Record<string, { from: string; to: string; bg: string; border: string }> = {
   Frontend: { from: '#3b82f6', to: '#60a5fa', bg: 'rgba(59,130,246,0.08)', border: 'rgba(59,130,246,0.2)' },
   Backend: { from: '#06b6d4', to: '#22d3ee', bg: 'rgba(6,182,212,0.08)', border: 'rgba(6,182,212,0.2)' },
   'Artificial Intelligence': { from: '#8b5cf6', to: '#a78bfa', bg: 'rgba(139,92,246,0.08)', border: 'rgba(139,92,246,0.2)' },
@@ -21,7 +21,23 @@ const categoryColors: Record<string, { from: string; to: string; bg: string; bor
   Hobbies: { from: '#ef4444', to: '#f87171', bg: 'rgba(239,68,68,0.08)', border: 'rgba(239,68,68,0.2)' },
 };
 
-export default function Skills() {
+const categoryColorsLight: Record<string, { from: string; to: string; bg: string; border: string }> = {
+  Frontend: { from: '#1e40af', to: '#1d4ed8', bg: 'rgba(30,64,175,0.04)', border: 'rgba(30,64,175,0.15)' },
+  Backend: { from: '#0e7490', to: '#0e7490', bg: 'rgba(14,116,144,0.04)', border: 'rgba(14,116,144,0.15)' },
+  'Artificial Intelligence': { from: '#6d28d9', to: '#6d28d9', bg: 'rgba(109,40,217,0.04)', border: 'rgba(109,40,217,0.15)' },
+  'Soft Skills': { from: '#b45309', to: '#b45309', bg: 'rgba(180,83,9,0.04)', border: 'rgba(180,83,9,0.15)' },
+  Languages: { from: '#047857', to: '#047857', bg: 'rgba(4,120,87,0.04)', border: 'rgba(4,120,87,0.15)' },
+  Hobbies: { from: '#b91c1c', to: '#b91c1c', bg: 'rgba(185,28,28,0.04)', border: 'rgba(185,28,28,0.15)' },
+};
+
+interface SkillsProps {
+  theme: 'light' | 'dark';
+}
+
+export default function Skills({ theme }: SkillsProps) {
+  const isDark = theme === 'dark';
+  const categoryColors = isDark ? categoryColorsDark : categoryColorsLight;
+
   return (
     <section id="skills" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950" />
@@ -43,8 +59,13 @@ export default function Skills() {
                 <div
                   className="rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group"
                   style={{
-                    background: `linear-gradient(135deg, ${colors.bg}, rgba(13,27,42,0.5))`,
+                    background: isDark
+                      ? `linear-gradient(135deg, ${colors.bg}, rgba(13,27,42,0.5))`
+                      : `linear-gradient(135deg, ${colors.bg}, rgba(255,255,255,0.92))`,
                     border: `1px solid ${colors.border}`,
+                    boxShadow: isDark
+                      ? 'none'
+                      : '0 8px 30px rgba(15,23,42,0.04)',
                   }}
                 >
                   {/* Header row */}
@@ -56,8 +77,8 @@ export default function Skills() {
                       {iconComponents[skill.icon] || <Code2 size={28} />}
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white">{skill.category}</h3>
-                      <p className="text-slate-500 text-xs">{skill.items.length} skills</p>
+                      <h3 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>{skill.category}</h3>
+                      <p className={`${isDark ? 'text-slate-500' : 'text-slate-400'} text-xs`}>{skill.items.length} skills</p>
                     </div>
                   </div>
 
@@ -66,11 +87,11 @@ export default function Skills() {
                     {skill.items.map((item) => (
                       <span
                         key={item}
-                        className="px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 cursor-default"
+                        className="px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105 cursor-default shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
                         style={{
-                          background: colors.bg,
-                          border: `1px solid ${colors.border}`,
-                          color: colors.to,
+                          background: isDark ? colors.bg : '#ffffff',
+                          border: `1px solid ${isDark ? colors.border : 'rgba(15, 23, 42, 0.08)'}`,
+                          color: isDark ? colors.to : colors.from,
                         }}
                       >
                         {item}
