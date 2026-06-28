@@ -35,6 +35,12 @@ export interface SocialLink {
   href: string;
 }
 
+export interface Achievement {
+  title: string;
+  date: string;
+  subtitle: string;
+}
+
 export const heroData = {
   name: 'Nanda Revan Saputro',
   title: 'AI & Full Stack Developer',
@@ -259,6 +265,7 @@ export const footerQuickLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Achievements', href: '#achievements' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -275,6 +282,7 @@ export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Achievements', href: '#achievements' },
   { label: 'Skill', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -306,3 +314,31 @@ export const carouselData = projectsData.map((p) => ({
           ? ['Machine Learning', 'Python', 'Data Preprocessing']
           : p.tech,
 }));
+
+export const achievementsData: Achievement[] = [
+  {
+    title: 'Google Student Ambassador',
+    date: 'September 2025',
+    subtitle: 'Selected by Google as campus ambassador',
+  },
+  {
+    title: 'Best Teamworks',
+    date: 'August 2025',
+    subtitle: 'Google Data Center Hardware Hackathon',
+  },
+  {
+    title: '2nd Place National Level',
+    date: 'August 2025',
+    subtitle: 'National Mathematics Olympiad',
+  },
+  {
+    title: '1st Place National Level',
+    date: 'September 2024',
+    subtitle: 'National Engineering Olympiad',
+  },
+  {
+    title: '3rd Place National Level',
+    date: 'September 2024',
+    subtitle: 'National English Olympiad',
+  },
+];
